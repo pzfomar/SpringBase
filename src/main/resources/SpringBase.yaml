@@ -1,0 +1,13 @@
+spring-base:
+ loggin.path:
+ core:
+  database:
+   path: ~/
+   username: sa
+   password:
+ micro:
+  database:
+   url: jdbc:h2:file:~/micro.mv
+   username: sa
+   password:
+   driver-class-name: org.h2.Driver
