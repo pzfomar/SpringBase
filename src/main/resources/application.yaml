@@ -1,0 +1,15 @@
+spring:
+ application.name: SpringBase
+ config.import: classpath:${spring.application.name}.yaml
+ datasource:
+  core:
+   jdbc-url: jdbc:h2:file:${spring-base.core.database.path}${spring.application.name}
+   username: ${spring-base.core.database.username}
+   password: ${spring-base.core.database.password}
+   driver-class-name: org.h2.Driver
+  micro:
+   jdbc-url: ${spring-base.micro.database.url}
+   username: ${spring-base.micro.database.username}
+   password: ${spring-base.micro.database.password}
+   driver-class-name: ${spring-base.micro.database.driver-class-name}
+logging.file.name: ${spring-base.loggin.path}${spring.application.name}.log

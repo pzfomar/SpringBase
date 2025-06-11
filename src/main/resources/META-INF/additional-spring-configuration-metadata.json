@@ -1,0 +1,84 @@
+{
+	"properties": [
+		{
+			"name": "spring.datasource.core.driver-class-name",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.core.driver-class-name'"
+		},
+		{
+			"name": "spring.datasource.core.password",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.core.password'"
+		},
+		{
+			"name": "spring.datasource.core.username",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.core.username'"
+		},
+		{
+			"name": "spring.datasource.micro.username",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.micro.username'"
+		},
+		{
+			"name": "spring.datasource.micro.password",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.micro.password'"
+		},
+		{
+			"name": "spring-base.loggin.path",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.loggin.path'"
+		},
+		{
+			"name": "spring-base.core.database.path",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.core.database.path'"
+		},
+		{
+			"name": "spring-base.micro.database.driver-class-name",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.micro.database.driver-class-name'"
+		},
+		{
+			"name": "spring-base.micro.database.password",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.micro.database.password'"
+		},
+		{
+			"name": "spring-base.micro.database.username",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.micro.database.username'"
+		},
+		{
+			"name": "spring-base.micro.database.url",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.micro.database.url'"
+		},
+		{
+			"name": "spring-base.core.database.password",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.core.database.password'"
+		},
+		{
+			"name": "spring-base.core.database.username",
+			"type": "java.lang.String",
+			"description": "A description for 'spring-base.core.database.username'"
+		},
+		{
+			"name": "spring.datasource.core.jdbc-url",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.core.jdbc-url'"
+		},
+		{
+			"name": "spring.datasource.micro.jdbc-url",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.micro.jdbc-url'"
+		},
+		{
+			"name": "spring.datasource.micro.driver-class-name",
+			"type": "java.lang.String",
+			"description": "A description for 'spring.datasource.micro.driver-class-name'"
+		}
+	]
+}
