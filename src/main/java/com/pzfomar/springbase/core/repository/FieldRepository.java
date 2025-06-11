@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.pzfomar.springbase.core.entity.FieldEntity;
 
+/**
+ * The Interface FieldRepository.
+ */
 @Repository
 public interface FieldRepository extends JpaRepository<FieldEntity, Long> {
 

@@ -16,9 +16,18 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import jakarta.persistence.EntityManagerFactory;
 
+/**
+ * The Class CoreJpaConfig.
+ */
 @Configuration
 @EnableJpaRepositories(basePackages = "com.pzfomar.springbase.core", entityManagerFactoryRef = "coreEntityManager", transactionManagerRef = "coreTransactionManager")
 public class CoreJpaConfig {
+
+	/**
+	 * Core data source.
+	 *
+	 * @return the data source
+	 */
 	@Primary
 	@Bean
 	@ConfigurationProperties(prefix = "spring.datasource.core")
@@ -26,6 +35,13 @@ public class CoreJpaConfig {
 		return DataSourceBuilder.create().build();
 	}
 
+	/**
+	 * Core entity manager.
+	 *
+	 * @param entityManagerFactoryBuilder the entity manager factory builder
+	 * @param dataSource                  the data source
+	 * @return the local container entity manager factory bean
+	 */
 	@Primary
 	@Bean
 	LocalContainerEntityManagerFactoryBean coreEntityManager(EntityManagerFactoryBuilder entityManagerFactoryBuilder,
@@ -34,6 +50,12 @@ public class CoreJpaConfig {
 				.persistenceUnit("core").build();
 	}
 
+	/**
+	 * Core transaction manager.
+	 *
+	 * @param entityManagerFactory the entity manager factory
+	 * @return the platform transaction manager
+	 */
 	@Bean
 	PlatformTransactionManager coreTransactionManager(
 			@Qualifier("coreEntityManager") EntityManagerFactory entityManagerFactory) {

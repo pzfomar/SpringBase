@@ -15,15 +15,31 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import jakarta.persistence.EntityManagerFactory;
 
+/**
+ * The Class MicroJpaConfig.
+ */
 @Configuration
 @EnableJpaRepositories(basePackages = "com.pzfomar.springbase.micro", entityManagerFactoryRef = "microEntityManager", transactionManagerRef = "microTransactionManager")
 public class MicroJpaConfig {
+
+	/**
+	 * Micro data source.
+	 *
+	 * @return the data source
+	 */
 	@Bean
 	@ConfigurationProperties(prefix = "spring.datasource.micro")
 	DataSource microDataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
+	/**
+	 * Micro entity manager.
+	 *
+	 * @param entityManagerFactoryBuilder the entity manager factory builder
+	 * @param dataSource                  the data source
+	 * @return the local container entity manager factory bean
+	 */
 	@Bean
 	LocalContainerEntityManagerFactoryBean microEntityManager(EntityManagerFactoryBuilder entityManagerFactoryBuilder,
 			@Qualifier("microDataSource") DataSource dataSource) {
@@ -31,6 +47,12 @@ public class MicroJpaConfig {
 				.persistenceUnit("micro").build();
 	}
 
+	/**
+	 * Micro transaction manager.
+	 *
+	 * @param entityManagerFactory the entity manager factory
+	 * @return the platform transaction manager
+	 */
 	@Bean
 	PlatformTransactionManager microTransactionManager(
 			@Qualifier("microEntityManager") EntityManagerFactory entityManagerFactory) {

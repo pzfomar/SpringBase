@@ -19,6 +19,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * The Class CollectionEntity.
+ */
 @Setter
 @Getter
 @Builder
@@ -27,21 +30,43 @@ import lombok.Setter;
 @Entity
 @Table(name = "collections")
 public class CollectionEntity extends Auditing {
+
+	/** The id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	/** The system. */
 	@Builder.Default
 	private boolean system = false;
+
+	/** The type. */
 	@Enumerated(EnumType.STRING)
 	private CollectionEnum type;
+
+	/** The name. */
 	private String name;
+
+	/** The fields. */
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<FieldEntity> fields;
+
+	/** The indexes. */
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<IndexEntity> indexes;
+
+	/** The list rule. */
 	private String listRule;
+
+	/** The view rule. */
 	private String viewRule;
+
+	/** The create rule. */
 	private String createRule;
+
+	/** The update rule. */
 	private String updateRule;
+
+	/** The delete rule. */
 	private String deleteRule;
 }
