@@ -11,6 +11,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * The Class IndexEntity.
+ */
 @Setter
 @Getter
 @Builder
@@ -19,8 +22,12 @@ import lombok.Setter;
 @Entity
 @Table(name = "indexes")
 public class IndexEntity extends Auditing {
+
+	/** The id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	/** The query. */
 	private String query;
 }

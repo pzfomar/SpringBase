@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.pzfomar.springbase.core.entity.IndexEntity;
 
+/**
+ * The Interface IndexRepository.
+ */
 @Repository
 public interface IndexRepository extends JpaRepository<IndexEntity, Long> {
 

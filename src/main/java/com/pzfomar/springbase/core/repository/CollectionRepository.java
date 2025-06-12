@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.pzfomar.springbase.core.entity.CollectionEntity;
 
+/**
+ * The Interface CollectionRepository.
+ */
 @Repository
 public interface CollectionRepository extends JpaRepository<CollectionEntity, Long> {
 
